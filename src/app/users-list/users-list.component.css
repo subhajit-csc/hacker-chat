@@ -1,0 +1,7 @@
+ul.list-group {
+  height: 100%;
+  overflow: auto;
+}
+ul.list-group li.list-group-item:hover {
+  cursor: pointer;
+}

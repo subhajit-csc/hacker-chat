@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+:host ul.message-list {
+  height: 93%;
+  overflow: auto;
+  list-style: none;
+  padding: 0;
+}
+:host ul.message-list li.message-list-item {
+  padding: 10px 0;
+}
+:host ul.message-list li.message-list-item:nth-child(odd) {
+  background: #efefef;
+}

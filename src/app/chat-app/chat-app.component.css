@@ -1,0 +1,32 @@
+.main header {
+  padding: 0 10px;
+}
+.main .chat-holder article, .main .chat-holder aside {
+  padding: 10px;
+}
+:host, .main, .main .chat-holder, .main .chat-holder article, .main .chat-holder aside {
+  height: 100%;
+}
+:host {
+  display: block;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  background-color: #333;
+}
+.main header h4 {
+  color: #565656;
+}
+.main .chat-holder {
+  display: flex;
+}
+.main .chat-holder article {
+  flex-basis: 80%;
+  background-color: #fff;
+}
+.main .chat-holder aside {
+  flex-basis: 20%;
+  padding-top: 0;
+}
