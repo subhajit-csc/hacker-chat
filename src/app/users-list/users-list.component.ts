@@ -15,7 +15,7 @@ export class UsersListComponent implements OnInit {
 
   constructor() {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
   public selectUser(user: User) {
     this.onUserSelect.emit(user);
