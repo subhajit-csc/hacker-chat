@@ -39,10 +39,6 @@ export class ChatInputComponent implements OnInit {
   }
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
-    this.config = {
-      placeholder: "message",
-      buttonLabel: "send"
-    };
   }
 
   private initForm() {

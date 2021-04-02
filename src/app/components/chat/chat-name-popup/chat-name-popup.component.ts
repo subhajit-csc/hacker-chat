@@ -19,6 +19,8 @@ export class ChatNamePopupComponent implements OnInit {
     this.onUserNameChange.emit(name);
   }
   ngOnInit(): void {
+    //this.config = CONFIG;
+    console.log("config->"+this.config.placeholder);
   }
 
 }

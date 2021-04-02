@@ -4,15 +4,23 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChatAppComponent } from './chat-app/chat-app.component';
-import { ChatInputComponent } from './chat-input/chat-input.component';
-import { ChatNamePopupComponent } from './chat-name-popup/chat-name-popup.component';
-import { ChatWindowComponent } from './chat-window/chat-window.component';
-import { MessageComponent } from './message/message.component';
-import { UsersListComponent } from './users-list/users-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ChatAppComponent } from './components/chat/chat-app/chat-app.component';
+import { ChatInputComponent } from './components/chat/chat-input/chat-input.component';
+import { ChatNamePopupComponent } from './components/chat/chat-name-popup/chat-name-popup.component';
+import { ChatWindowComponent } from './components/chat/chat-window/chat-window.component';
+import { MessageComponent } from './components/chat/message/message.component';
+import { UsersListComponent } from './components/chat/users-list/users-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
+import { AuthService } from './_services';
+import { AuthGuard } from './_helpers/auth-guard/auth-guard.service';
+import { httpInterceptorProviders } from './_helpers/http-interceptors';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/common/login/login.component';
+import { SignupComponent } from './components/common/signup/signup.component';
+import { EditUserComponent } from './components/common/edit-user/edit-user.component';
+import { CommonModule } from '@angular/common';
 
 
 const config: SocketIoConfig = { url: "http://localhost:4200", options: {} };
@@ -25,17 +33,33 @@ const config: SocketIoConfig = { url: "http://localhost:4200", options: {} };
     ChatNamePopupComponent,
     ChatWindowComponent,
     MessageComponent,
-    UsersListComponent
+    UsersListComponent,
+    LoginComponent,
+    SignupComponent,
+    EditUserComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    HttpClientModule,
+    AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }
+
+//TODO: Need to remove this section
+declare module "@angular/core" {
+  interface ModuleWithProviders<T = any> {
+    ngModule: Type<T>;
+    providers?: Provider[];
+  }
+}

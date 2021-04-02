@@ -1,0 +1,25 @@
+<div class="card mt-4">
+  <div class="col-md-6 offset-md-3 mt-5">
+    <form #signinForm="ngForm" (ngSubmit)="signIn(signinForm.value)">
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <div *ngIf="invalidLogin" class="alert alert-danger">
+        <span class="alert alert-danger">Invalid username and/or password.</span>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail1">Email address</label>
+        <input type="email" class="form-control" id="inputEmail1" name="email" ngModel aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel placeholder="Password" required>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" id="login" class="btn btn-primary" [disabled]="!signinForm.form.valid">Login</button>
+      <a class="btn btn-outline-primary" [routerLink]="['/signup']" style="margin-left:10px;">Signup</a>
+    </form>
+  </div>
+</div>
