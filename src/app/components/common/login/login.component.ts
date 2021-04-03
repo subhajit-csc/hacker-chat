@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       .subscribe(result => {
         console.log(result)
         if (result)
-          this.router.navigate(['/chat']);
+          this.router.navigate(['/dashboard']);
         else
           this.invalidLogin = true;
       },

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChatAppComponent } from './components/chat/chat-app/chat-app.component';
+import { DashboardComponent } from './components/common/dashboard/dashboard.component';
 import { LoginComponent } from './components/common/login/login.component';
 import { SignupComponent } from './components/common/signup/signup.component';
 
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
     path: 'chat',

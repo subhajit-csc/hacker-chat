@@ -21,6 +21,7 @@ import { LoginComponent } from './components/common/login/login.component';
 import { SignupComponent } from './components/common/signup/signup.component';
 import { EditUserComponent } from './components/common/edit-user/edit-user.component';
 import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './components/common/dashboard/dashboard.component';
 
 
 const config: SocketIoConfig = { url: "http://localhost:4200", options: {} };
@@ -36,7 +37,8 @@ const config: SocketIoConfig = { url: "http://localhost:4200", options: {} };
     UsersListComponent,
     LoginComponent,
     SignupComponent,
-    EditUserComponent
+    EditUserComponent,
+    DashboardComponent
 
   ],
   imports: [
